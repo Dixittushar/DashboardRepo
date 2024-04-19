@@ -9,6 +9,7 @@ import styled from "@emotion/styled";
 import { Category, Product } from "./utils/types";
 import { MultiValue, ActionMeta } from "react-select";
 import PieChart from "./Chart/PieChart";
+import MaterialUIButton from "@mui/material/Button";
 
 // Styles
 const Container = styled(MaterialUIContainer)`
@@ -183,7 +184,9 @@ const Dashboard: React.FC<DashboardProps> = () => {
             disabled={!selectedCategory}
             onClick={handleRunReport}
           />
-          <button onClick={handleClearFilter}>Clear Filter</button>
+          <MaterialUIButton variant="contained" onClick={handleClearFilter}>
+            Clear Filters
+          </MaterialUIButton>
         </TopContainer>
         <ContainerChart>
           {!selectedCategory ? (
