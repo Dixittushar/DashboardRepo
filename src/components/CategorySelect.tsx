@@ -1,7 +1,7 @@
 import React from "react";
 import Select, { ActionMeta, SingleValue } from "react-select";
 
-import { Category } from "../utils/types"; // Import your Category type
+import { Category } from "../utils/types";
 
 interface CategorySelectProps {
   categories: Category[];
@@ -17,23 +17,23 @@ const CategorySelect: React.FC<CategorySelectProps> = ({
   selectedCategory,
   onSelect,
 }) => {
-  console.log(selectedCategory);
   return (
     <div>
       {categories && (
         <Select
           options={categories.map((category) => ({
-            value: category,
             label: category,
+            value: category,
           }))}
-          // value={selectedCategory} // Set the value prop
           onChange={(selectedOption) =>
             onSelect(
               selectedOption as SingleValue<Category> | null,
               null as any
             )
           }
-          placeholder="Select Category.."
+          placeholder={
+            selectedCategory ? selectedCategory?.label : "Select Category.."
+          }
         />
       )}
     </div>

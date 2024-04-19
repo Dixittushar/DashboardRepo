@@ -19,7 +19,7 @@ const PieChart: React.FC = () => {
       const data = await response.json();
       const formattedData = data.map((category: string) => ({
         name: category,
-        y: category.length, // Initial value (you may want to adjust this)
+        y: category.length,
       }));
       setCategoryData(formattedData);
     };

@@ -1,5 +1,4 @@
 
-// utils/types.ts
 export interface Category {
     value: string;
     label: string;
@@ -14,5 +13,5 @@ export interface Product {
 
 export interface ChartDataPoint {
     name: string;
-    price: number; // Assuming your charts deal with prices
+    price: number;
 }

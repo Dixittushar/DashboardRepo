@@ -1,5 +1,4 @@
 import React from "react";
-import PieChart from "./PieChart";
 import BarChart from "./BarChart";
 import { ChartDataPoint } from "../utils/types";
 export interface ChartContainerProps {

@@ -98,21 +98,20 @@ const Dashboard: React.FC<DashboardProps> = () => {
     value: MultiValue<Product>,
     actionMeta: ActionMeta<Product>
   ) => {
-    // 1. Filter products based on selectedCategory
+    // 1. Filtering the products based on selectedCategory
     const filteredProducts = selectedCategory
       ? products.filter(
           (product) => product.category === selectedCategory.value
         )
       : [];
 
-    // 2. Extract product IDs from the filtered products
+    // 2. Extracting the product IDs from the filtered products
     const selectedProductIds = filteredProducts.map((product) => product.id);
 
-    // 3. Update selectedProducts state
+    // 3. Updating selectedProducts state
     setSelectedProducts(selectedProductIds);
   };
 
-  // Simulate API call on button click
   const handleRunReport = async () => {
     setIsLoading(true);
     await new Promise((resolve) => setTimeout(resolve, 3000));
@@ -135,7 +134,6 @@ const Dashboard: React.FC<DashboardProps> = () => {
     setIsLoading(false);
   };
 
-  // Modify if your chart expects a different shape
   const processChartData = (
     productPrices: { id: number; name: string; price: number }[],
     selectedProducts: number[]
